@@ -4,11 +4,11 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import scale
 import numpy as np
 import pandas as pd
-df = pd.read_excel('E:\\python_programs\\pca\\1.xlsx',header =0)
+df = pd.read_excel('D:\\Python_program\\PCA\\1.xlsx',header =0)
 data=df.values #获取excel数据
 data_matrix = np.mat(data) #转化为numpy格式的数组
 data = scale(data_matrix) # 标准化，标准化之后就自动根据协方差矩阵进行主成分分析了（matlab中zscore）
-pca = PCA() # 可以调整主成分个数，n_components = 1
+pca = PCA()# 可以调整主成分个数，n_components = 1
 pca.fit(data)
 # pca.fit(data_matrix)
 landa = pca.explained_variance_ #根据PCA算法计算特征值（由大到小排序）
