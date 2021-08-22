@@ -43,3 +43,9 @@ pca_mle.fit(x)
 X_mle = pca_mle.transform(x)
 print(X_mle)
 #最大似然法帮我们选择了两个主成分
+
+pca_f = PCA(n_components=0.97,svd_solver="full") #让程序帮我们选择解释方差比超过97%的所有主成分
+pca_f.fit(x)
+X_pca_f = pca_f.transform(x)
+print(X_pca_f)
+#这里程序又选择了两个主成分
